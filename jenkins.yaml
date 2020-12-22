@@ -7,9 +7,9 @@ jenkins:
       allowsSignup: false
       enableCaptcha: false
       users:
-      - id: "admin"
+      - id: "${chart-admin-username}"
         name: "Jenkins Admin"
-        password: "admin"
+        password: "${chart-admin-password}"
   disableRememberMe: false
   remotingSecurity:
     enabled: true
@@ -38,6 +38,7 @@ jenkins:
           containers:
           - name: "jnlp"
             alwaysPullImage: false
+            args: "^${computer.jnlpmac} ^${computer.name}"
             envVars:
               - envVar:
                   key: "JENKINS_URL"
@@ -72,4 +73,4 @@ security:
 unclassified:
   location:
     adminAddress:
-    url: http://jenkins:8080jenkins@jenkins-0
+    url: http://jenkins:8080
