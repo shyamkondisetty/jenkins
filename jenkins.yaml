@@ -1,11 +1,2 @@
-jenkins:
-  credentials: 
-    system: 
-      domainCredentials:
-        - credentials: 
-           - usernamePassword:
-                scope: GLOBAL
-                id: githubcredentials
-                username: "foobar"
-                password: "foobar"
+
             
