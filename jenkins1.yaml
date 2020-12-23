@@ -27,11 +27,16 @@ jobs:
       }
 globalConfigFiles:
   configs:
+    - custom:
+        id: sample-custom-config
+        name: SampleCustomConfig
+        comment: dummy custom 1
+        content: dummy content 1
+
     - json:
         id: sample-json-config
         name: SampleJsonConfig
         comment: sample json config
         content: |
           { "dummydata": {"dummyKey": "dummyValue"} }
-      
       
