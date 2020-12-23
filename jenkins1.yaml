@@ -7,7 +7,7 @@ credentials:
           username: "exampleuser"
           password: "{AQAAABAAAAAQ1/JHKggxIlBcuVqegoa2AdyVaNvjWIFk430/vI4jEBM=}"
           description: "Sample credentials of exampleuser"
-          scope: GLOBAL
+          scope: GLOBAL        
 jobs:
   - script: >
       pipelineJob('example') {
@@ -25,3 +25,13 @@ jobs:
             }
          }
       }
+globalConfigFiles:
+  configs:
+    - json:
+        id: sample-json-config
+        name: SampleJsonConfig
+        comment: sample json config
+        content: |
+          { "dummydata": {"dummyKey": "dummyValue"} }
+      
+      
