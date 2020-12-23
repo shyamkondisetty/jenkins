@@ -10,11 +10,18 @@ credentials:
           scope: GLOBAL
 jobs:
   - script: >
-      multibranchPipelineJob('configuration-as-code-demo') {
-          branchSources {
-              git {
-                  id = 'configuration-as-code-demo'
-                  remote('https://github.com/jenkinsci/configuration-as-code-plugin.git')
-              }
-          }
+      pipelineJob('example') {
+        definition {
+            cpsScm {
+                scm {
+                    git {
+                        branch('master')
+                        remote {
+                            url('https://github.com/jenkinsci/job-dsl-plugin.git')
+                        }
+                    }
+                }
+                scriptPath('Jenkinsfile')
+            }
+         }
       }
