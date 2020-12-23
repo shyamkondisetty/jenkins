@@ -25,18 +25,18 @@ jobs:
             }
          }
       }
-globalConfigFiles:
-  configs:
+unclassified:
+  globalConfigFiles:
+    configs:
     - custom:
-        id: sample-custom-config
-        name: SampleCustomConfig
+        id: custom-test
+        name: DummyCustom1
         comment: dummy custom 1
         content: dummy content 1
-
     - json:
-        id: sample-json-config
-        name: SampleJsonConfig
-        comment: sample json config
+        id: json-test
+        name: DummyJsonConfig
+        comment: dummy json config
         content: |
           { "dummydata": {"dummyKey": "dummyValue"} }
       
