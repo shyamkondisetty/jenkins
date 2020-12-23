@@ -1,5 +1,4 @@
-jenkins:
-  credentials: 
+credentials: 
     system: 
       domainCredentials:
         - credentials: 
@@ -8,3 +7,4 @@ jenkins:
                 id: githubcredentials
                 username: "foobar"
                 password: "foobar"
+  
