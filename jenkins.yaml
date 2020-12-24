@@ -27,6 +27,23 @@ jobs:
             }
          }
       }
+      pipelineJob('Infra_package') {
+        definition {
+            cpsScm {
+                scm {
+                    git {
+                        branch('master')
+                        remote {
+                            url('https://github.com/twCatalyst/service-deployment-starter-helm.git')
+                            credentials('githubCredentials')
+
+                        }
+                    }
+                }
+                scriptPath('Jenkinsfile_infra_package')
+            }
+         }
+      }
 unclassified:
   globalConfigFiles:
     configs:
