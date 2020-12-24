@@ -100,24 +100,6 @@ jobs:
          }
       }
       
-      pipelineJob('security') {
-        definition {
-            cpsScm {
-                scm {
-                    git {
-                        branch('master')
-                        remote {
-                            url('https://github.com/twCatalyst/service-starter.git)
-                            credentials('githubCredentials')
-
-                        }
-                    }
-                }
-                scriptPath('JenkinsfileSecurity')
-            }
-         }
-      }
-      
 unclassified:
   globalConfigFiles:
     configs:
