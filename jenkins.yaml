@@ -130,6 +130,9 @@ jobs:
                   apiUri("")
                   credentialsId('githubCredentials')
                   buildOriginBranch(true)
+                  buildOriginPRMerge(true)
+                  buildOriginBranchWithPR(true)
+                  buildOriginPRMerge(true)
               }
           }
           projectFactories {
