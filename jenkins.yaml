@@ -118,6 +118,26 @@ jobs:
          }
       }
       
+      organizationFolder('d060631') {
+          description('Personal repository for Gordon Franke (d060631)')
+          displayName('Gordon Franke')
+          triggers {
+              periodic(1)
+          }
+          organizations {
+              github {
+                  repoOwner("twCatalyst")
+                  apiUri("")
+                  credentialsId('githubCredentials')
+              }
+          }
+          projectFactories {
+              workflowMultiBranchProjectFactory {
+                  scriptPath("Jenkinsfile")
+              }
+          }
+      }
+      
 unclassified:
   globalConfigFiles:
     configs:
