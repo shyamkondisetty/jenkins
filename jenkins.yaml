@@ -45,6 +45,78 @@ jobs:
             }
          }
       }
+      
+      pipelineJob('Deploy_qa') {
+        definition {
+            cpsScm {
+                scm {
+                    git {
+                        branch('master')
+                        remote {
+                            url('https://github.com/twCatalyst/jenkins-shared-library.git')
+                            credentials('githubCredentials')
+
+                        }
+                    }
+                }
+                scriptPath('deploy/Jenkinsfile_deploy_qa')
+            }
+         }
+      }
+      
+      pipelineJob('Deploy_staging') {
+        definition {
+            cpsScm {
+                scm {
+                    git {
+                        branch('master')
+                        remote {
+                            url('https://github.com/twCatalyst/jenkins-shared-library.git')
+                            credentials('githubCredentials')
+
+                        }
+                    }
+                }
+                scriptPath('deploy/Jenkinsfile_deploy_staging')
+            }
+         }
+      }
+      
+      pipelineJob('Secrets scanner') {
+        definition {
+            cpsScm {
+                scm {
+                    git {
+                        branch('master')
+                        remote {
+                            url('https://github.com/twCatalyst/service-starter.git)
+                            credentials('githubCredentials')
+
+                        }
+                    }
+                }
+                scriptPath('JenkinsfileSecrets')
+            }
+         }
+      }
+      
+      pipelineJob('security') {
+        definition {
+            cpsScm {
+                scm {
+                    git {
+                        branch('master')
+                        remote {
+                            url('https://github.com/twCatalyst/service-starter.git)
+                            credentials('githubCredentials')
+
+                        }
+                    }
+                }
+                scriptPath('JenkinsfileSecurity')
+            }
+         }
+      }
 unclassified:
   globalConfigFiles:
     configs:
