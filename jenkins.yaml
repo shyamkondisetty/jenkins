@@ -82,7 +82,7 @@ jobs:
          }
       }
       
-      pipelineJob('Secrets scanner') {
+      pipelineJob('Secrets_scanner') {
         definition {
             cpsScm {
                 scm {
