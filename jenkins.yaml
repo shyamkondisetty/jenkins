@@ -129,6 +129,7 @@ jobs:
                   repoOwner("twCatalyst")
                   apiUri("")
                   credentialsId('githubCredentials')
+                  buildOriginBranch(true)
               }
           }
           projectFactories {
