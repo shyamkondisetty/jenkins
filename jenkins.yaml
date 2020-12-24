@@ -10,7 +10,7 @@ credentials:
           scope: GLOBAL        
 jobs:
   - script: >
-      pipelineJob('example') {
+      pipelineJob('Deploy_infra') {
         definition {
             cpsScm {
                 scm {
@@ -23,7 +23,7 @@ jobs:
                         }
                     }
                 }
-                scriptPath('Jenkinsfile')
+                scriptPath('Jenkinsfile_deploy_infra')
             }
          }
       }
