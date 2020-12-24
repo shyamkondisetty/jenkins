@@ -82,20 +82,38 @@ jobs:
          }
       }
       
-      pipelineJob('Secrets_scanner') {
+      pipelineJob('Secrets scanner') {
         definition {
             cpsScm {
                 scm {
                     git {
                         branch('master')
                         remote {
-                            url('https://github.com/twCatalyst/service-starter.git)
+                            url('https://github.com/twCatalyst/service-starter.git')
                             credentials('githubCredentials')
 
                         }
                     }
                 }
                 scriptPath('JenkinsfileSecrets')
+            }
+         }
+      }
+      
+      pipelineJob('security') {
+        definition {
+            cpsScm {
+                scm {
+                    git {
+                        branch('master')
+                        remote {
+                            url('https://github.com/twCatalyst/service-starter.git')
+                            credentials('githubCredentials')
+
+                        }
+                    }
+                }
+                scriptPath('JenkinsfileSecurity')
             }
          }
       }
