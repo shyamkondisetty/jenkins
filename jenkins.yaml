@@ -77,7 +77,7 @@ jobs:
                         }
                     }
                 }
-                scriptPath('deploy/Jenkinsfile_deploy_staging')
+                scriptPath('deploy/Jenkinsfile_deploy_stage')
             }
          }
       }
