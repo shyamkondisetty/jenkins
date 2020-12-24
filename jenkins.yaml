@@ -64,6 +64,24 @@ jobs:
          }
       }
       
+      pipelineJob('Deploy_staging') {
+        definition {
+            cpsScm {
+                scm {
+                    git {
+                        branch('master')
+                        remote {
+                            url('https://github.com/twCatalyst/jenkins-shared-library.git')
+                            credentials('githubCredentials')
+
+                        }
+                    }
+                }
+                scriptPath('deploy/Jenkinsfile_deploy_staging')
+            }
+         }
+      }
+      
 unclassified:
   globalConfigFiles:
     configs:
