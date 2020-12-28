@@ -126,6 +126,7 @@ jobs:
           organizations {
               github {
                   repoOwner("twCatalyst")
+                  apiUri("")
                   credentialsId('githubCredentials')
 
               }
