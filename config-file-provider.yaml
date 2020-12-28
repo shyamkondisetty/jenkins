@@ -1,1 +1,14 @@
-
+unclassified:
+  globalConfigFiles:
+    configs:
+    - custom:
+        id: custom-test
+        name: DummyCustom1
+        comment: dummy custom 1
+        content: dummy content 1
+    - json:
+        id: json-test
+        name: DummyJsonConfig
+        comment: dummy json config
+        content: |
+          { "dummydata": {"dummyKey": "dummyValue"} }
