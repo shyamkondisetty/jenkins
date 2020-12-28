@@ -119,15 +119,15 @@ jobs:
       }
       
       organizationFolder('catalyst') {
-          description('Personal repository for Gordon Franke (catalyst)')
-          displayName('catalyst')
+#          description('Personal repository for Gordon Franke (catalyst)')
+#          displayName('catalyst')
           triggers {
               periodic(1)
           }
           organizations {
               github {
                   repoOwner("twCatalyst")
-                  apiUri("")
+#                  apiUri("")
                   credentialsId('githubCredentials')
 
               }
