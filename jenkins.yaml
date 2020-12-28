@@ -120,7 +120,7 @@ jobs:
       
       organizationFolder('catalyst') {
 #          description('Personal repository for Gordon Franke (catalyst)')
-#          displayName('catalyst')
+          displayName('catalyst')
           triggers {
               periodic(1)
           }
