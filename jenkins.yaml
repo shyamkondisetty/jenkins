@@ -118,9 +118,9 @@ jobs:
          }
       }
       
-      organizationFolder('d060631') {
+      organizationFolder('catalyst') {
           description('Personal repository for Gordon Franke (d060631)')
-          displayName('Gordon Franke')
+          displayName('catalyst')
           triggers {
               periodic(1)
           }
@@ -129,10 +129,7 @@ jobs:
                   repoOwner("twCatalyst")
                   apiUri("")
                   credentialsId('githubCredentials')
-                  buildOriginBranch(true)
-                  buildOriginPRMerge(true)
-                  buildOriginBranchWithPR(true)
-                  buildOriginPRMerge(true)
+
               }
           }
           projectFactories {
