@@ -119,7 +119,7 @@ jobs:
       }
       
       organizationFolder('catalyst') {
-          description('Personal repository for Gordon Franke (d060631)')
+          description('Personal repository for Gordon Franke (catalyst)')
           displayName('catalyst')
           triggers {
               periodic(1)
