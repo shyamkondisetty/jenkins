@@ -1,14 +1,50 @@
 unclassified:
   globalConfigFiles:
     configs:
-    - custom:
-        id: custom-test
-        name: DummyCustom1
-        comment: dummy custom 1
-        content: dummy content 1
     - json:
-        id: json-test
-        name: DummyJsonConfig
-        comment: dummy json config
-        content: |
-          { "dummydata": {"dummyKey": "dummyValue"} }
+        content: "{\n\t\"postgresql\": {\n\t\t\"DEPLOY_TYPE\": \"helm\",\n\t\t\"CHART\"\
+          : \"infra-basic/postgresql\",\n\t\t\"VERSION\": \"9.8.9\"\n\t},\n\t\"nexus-artifactory\"\
+          : {\n\t\t\"DEPLOY_TYPE\": \"helm\",\n\t\t\"CHART\": \"nexus-artifactory\"\
+          ,\n\t\t\"VERSION\": \"28.1.1\"\n\t},\n\t\"elasticsearch\": {\n\t\t\"DEPLOY_TYPE\"\
+          : \"helm\",\n\t\t\"CHART\": \"infra-basic/elasticstackwithexistinghelmcharts/elasticsearch\"\
+          ,\n\t\t\"VERSION\": \"7.8.0\"\n\t},\n\t\"filebeat\": {\n\t\t\"DEPLOY_TYPE\"\
+          : \"helm\",\n\t\t\"CHART\": \"infra-basic/elasticstackwithexistinghelmcharts/filebeat\"\
+          ,\n\t\t\"VERSION\": \"7.8.0\"\n\t},\n\t\"kibana\": {\n\t\t\"DEPLOY_TYPE\"\
+          : \"helm\",\n\t\t\"CHART\": \"infra-basic/elasticstackwithexistinghelmcharts/kibana\"\
+          ,\n\t\t\"VERSION\": \"7.8.0\"\n\t},\n\t\"prometheus\": {\n\t\t\"DEPLOY_TYPE\"\
+          : \"helm\",\n\t\t\"CHART\": \"infra-metrics/prometheus\",\n\t\t\"VERSION\"\
+          : \"11.12.1\"\n\t},\n\t\"grafana\": {\n\t\t\"DEPLOY_TYPE\": \"helm\",\n\t\
+          \t\"CHART\": \"infra-metrics/grafana\",\n\t\t\"VERSION\": \"5.5.7\"\n\t\
+          },\n\t\"infra-central-config\": {\n\t\t\"DEPLOY_TYPE\": \"helm\",\n\t\t\"\
+          CHART\": \"infra-central-config\",\n\t\t\"VERSION\": \"1.0.0\"\n\t},\n\t\
+          \"infra-vault\": {\n\t\t\"DEPLOY_TYPE\": \"helm\",\n\t\t\"CHART\": \"infra-vault\"\
+          ,\n\t\t\"VERSION\": \"0.8.0\"\n\t},\n\t\"infra-keycloak\": {\n\t\t\"DEPLOY_TYPE\"\
+          : \"helm\",\n\t\t\"CHART\": \"infra-keycloak\",\n\t\t\"VERSION\": \"9.5.0\"\
+          \n\t},\n  \t\"jenkins\": {\n  \t\t\"DEPLOY_TYPE\": \"helm\",\n      \t\"\
+          CHART\": \"jenkins\",\n      \t\"VERSION\": \"latest\"\n  \t},\n\t\"nexus-secret\"\
+          : {\n\t\t\"DEPLOY_TYPE\": \"kubectl\",\n\t\t\"FILES_LOCATION\": \"nexus-secret\"\
+          \n\t},\n\t\"postgresclient\": {\n\t\t\"DEPLOY_TYPE\": \"kubectl\",\n\t\t\
+          \"FILES_LOCATION\": \"postgresclient\"\n\t},\n\t\"dockerregistry\": {\n\t\
+          \t\"DEPLOY_TYPE\": \"kubectl\",\n\t\t\"FILES_LOCATION\": \"dockerregistry\"\
+          \n\t}\n}"
+        id: "2be6d479-3694-4dea-b11e-f42d334c5c9e"
+        name: "JsonServiceConfig"
+        providerId: "org.jenkinsci.plugins.configfiles.json.JsonConfig"
+    - json:
+        comment: "json config for cluster config names"
+        content: "{\"CLUSTER_CONFIG_NAME\":[\"kubernetes-staging\",\"kubernetes-qa\"\
+          ,\"kubernetes-systems\"]}"
+        id: "2f611333-d362-437d-8a28-a964bff1f858"
+        name: "JsonClusterConfig"
+        providerId: "org.jenkinsci.plugins.configfiles.json.JsonConfig"
+    - json:
+        comment: "JsonServices"
+        content: "{\n\t\"SERVICE_NAME\": [\n\t\t'postgresql',\n\t\t'nexus-secret',\n\
+          \      \t'nexus-artifactory', \n      \t'postgresclient', \n      \t'elasticsearch',\
+          \ \n      \t'filebeat', \n      \t'kibana',\n      \t'grafana',\n      \t\
+          'prometheus',\n      \t'infra-central-config', \n      \t'infra-vault',\n\
+          \      \t'infra-keycloak',\n      \t'jenkins',\n      \t'dockerregistry'\n\
+          \t]\n}"
+        id: "5c3db4db-a692-4ce8-b0fb-58381dac05aa"
+        name: "JsonServiceNameConfig"
+        providerId: "org.jenkinsci.plugins.configfiles.json.JsonConfig"
